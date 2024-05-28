@@ -36,3 +36,17 @@ start_time= appointment[0].strftime('%I:%M %p')
 end_time= appointment[1].strftime('%I:%M %p')
 
 st.write('you are scheduled for: ', start_time, ' to ', end_time)
+
+st.header('Method #2: st.select_slider')
+st.write('Accepts any datatype and takes an iterable set of options')
+
+# example 6
+color = st.select_slider('Select a color: ',
+                         options=['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'])
+st.write('the color you selected is: ', color)
+
+# example 7 - two options (at max)
+start_color, end_color = st.select_slider('Select a color: ',
+                         options=['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'],
+                         value=('red', 'violet'))
+st.write('the color you selected is: ', start_color, "and", end_color)
